@@ -1,0 +1,1252 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motivação &#8212; Análise Exploratória de Dados Nepomuceno</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Análise Exploratória de Dados Nepomuceno</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Motivação
+  </a>
+ </li>
+</ul>
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/EDA Nepomuceno.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/EDA Nepomuceno.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Motivação
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tratamento-e-limpeza">
+   Tratamento e Limpeza
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analise-exploratoria-de-dados">
+   Análise Exploratória de dados
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cidades">
+     Cidades
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quais-foram-as-cidades-com-maior-quantidade-de-entregas">
+       Quais foram as cidades com maior quantidade de entregas?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centros-de-distribuicao">
+     Centros de distribuição
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-centro-de-distribuicao-possui-mais-atividade">
+       Qual centro de distribuição possui mais atividade?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quantas-cidades-um-centro-de-distribuicao-atende">
+       Quantas cidades um centro de distribuição atende?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roteiros-importancia">
+     Roteiros (Importância)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-a-frequencia-das-cidades-mais-encontradas-em-roteiros">
+       Qual a frequência das cidades mais encontradas em roteiros?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-definir-importancia-em-relacao-a-cidades">
+       Como definir ‘importância’ em relação a cidades?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-seria-a-melhor-frequencia-relativa-minima">
+       Qual seria a melhor frequência relativa mínima?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#com-que-frequencia-as-melhores-combinacoes-ocorrem">
+       Com que frequência as melhores combinações ocorrem?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-encontrar-relacoes-entre-cidades-se-baseando-nos-roteiros-criados">
+       Como encontrar relações entre cidades se baseando nos roteiros criados?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roteiros">
+     Roteiros
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-os-roteiros-feitos-em-2020-se-diferem-em-termos-de-distancia-percorrida-dos-roteiros-otimizados">
+       Como os roteiros feitos em 2020 se diferem em termos de distância percorrida dos roteiros otimizados?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-seria-a-diferenca-percentual-na-quilometragem-total-em-2020-se-os-roteiros-fossem-trocados-pelos-roteiros-otimizados">
+       Qual seria a diferença percentual na quilometragem total em 2020 se os roteiros fossem trocados pelos roteiros otimizados?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-seria-a-diferenca-percentual-na-distancia-mediana-por-roteiro-se-eles-fossem-trocados-pelos-roteiros-otimizados">
+       Qual seria a diferença percentual na distância mediana por roteiro se eles fossem trocados pelos roteiros otimizados?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dos-roteiros-realizados-quantos-poderiam-ter-uma-origem-diferente">
+       Dos roteiros realizados quantos poderiam ter uma origem diferente?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-as-cidades-importantes-ficam-distribuidas-em-relacao-ao-centro-de-distribuicao-se-trocarmos-a-origem">
+       Como as cidades importantes ficam distribuidas em relação ao Centro de distribuição se trocarmos a origem?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusao">
+   Conclusão
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Motivação</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Motivação
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tratamento-e-limpeza">
+   Tratamento e Limpeza
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analise-exploratoria-de-dados">
+   Análise Exploratória de dados
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cidades">
+     Cidades
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quais-foram-as-cidades-com-maior-quantidade-de-entregas">
+       Quais foram as cidades com maior quantidade de entregas?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centros-de-distribuicao">
+     Centros de distribuição
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-centro-de-distribuicao-possui-mais-atividade">
+       Qual centro de distribuição possui mais atividade?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quantas-cidades-um-centro-de-distribuicao-atende">
+       Quantas cidades um centro de distribuição atende?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roteiros-importancia">
+     Roteiros (Importância)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-a-frequencia-das-cidades-mais-encontradas-em-roteiros">
+       Qual a frequência das cidades mais encontradas em roteiros?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-definir-importancia-em-relacao-a-cidades">
+       Como definir ‘importância’ em relação a cidades?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-seria-a-melhor-frequencia-relativa-minima">
+       Qual seria a melhor frequência relativa mínima?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#com-que-frequencia-as-melhores-combinacoes-ocorrem">
+       Com que frequência as melhores combinações ocorrem?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-encontrar-relacoes-entre-cidades-se-baseando-nos-roteiros-criados">
+       Como encontrar relações entre cidades se baseando nos roteiros criados?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roteiros">
+     Roteiros
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-os-roteiros-feitos-em-2020-se-diferem-em-termos-de-distancia-percorrida-dos-roteiros-otimizados">
+       Como os roteiros feitos em 2020 se diferem em termos de distância percorrida dos roteiros otimizados?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-seria-a-diferenca-percentual-na-quilometragem-total-em-2020-se-os-roteiros-fossem-trocados-pelos-roteiros-otimizados">
+       Qual seria a diferença percentual na quilometragem total em 2020 se os roteiros fossem trocados pelos roteiros otimizados?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qual-seria-a-diferenca-percentual-na-distancia-mediana-por-roteiro-se-eles-fossem-trocados-pelos-roteiros-otimizados">
+       Qual seria a diferença percentual na distância mediana por roteiro se eles fossem trocados pelos roteiros otimizados?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dos-roteiros-realizados-quantos-poderiam-ter-uma-origem-diferente">
+       Dos roteiros realizados quantos poderiam ter uma origem diferente?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#como-as-cidades-importantes-ficam-distribuidas-em-relacao-ao-centro-de-distribuicao-se-trocarmos-a-origem">
+       Como as cidades importantes ficam distribuidas em relação ao Centro de distribuição se trocarmos a origem?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusao">
+   Conclusão
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="motivacao">
+<h1>Motivação<a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h1>
+<p>Avaliar o trabalho feito pela Nepomuceno.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="tratamento-e-limpeza">
+<h1>Tratamento e Limpeza<a class="headerlink" href="#tratamento-e-limpeza" title="Permalink to this headline">¶</a></h1>
+<p>Com isso decidimos trabalhar com a variável Rota como identificador.
+Em relação a tratamento e limpeza dos dados, foram feitas:</p>
+<ul class="simple">
+<li><p><strong>Sobre valores faltantes</strong>: Todos os valores nulos foram removidos.</p></li>
+<li><p><strong>Sobre entregas com pesos fora do especificado</strong>: Foram levadas em consideração apenas entregas com peso de transporte <strong>entre 11000 e 13000 kilos</strong>.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">distributions</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Rota&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">PesoTransp</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="n">min_data</span><span class="p">,</span> <span class="n">max_data</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">PesoTransp</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">PesoTransp</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;PesoTransp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;frequency&#39;</span><span class="p">,</span> 
+                  <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">min_data</span><span class="p">,</span> <span class="n">max_data</span> <span class="o">+</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma do peso por entrega&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Peso&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_8_0.png" src="_images/EDA Nepomuceno_8_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Como resultado da etapa da de limpeza de dados estamos trabalhando com <strong>22% de dados do conjunto original</strong>.</p></li>
+<li><p>Mais de <strong>50%</strong> das entregas possuem cargas acima de <strong>12 toneladas</strong>.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">qtd_data</span><span class="p">,</span> <span class="n">new_qtd_data</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;S/filtro&#39;</span><span class="p">,</span> <span class="s1">&#39;C/ filtro&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Quantidade de dados&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">filter_by_weight</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">PesoTransp</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma do peso por entrega (ao filtrar peso entre 11000 e 13000)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Peso (ton)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_10_0.png" src="_images/EDA Nepomuceno_10_0.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="analise-exploratoria-de-dados">
+<h1>Análise Exploratória de dados<a class="headerlink" href="#analise-exploratoria-de-dados" title="Permalink to this headline">¶</a></h1>
+<div class="attention admonition">
+<p class="admonition-title">Atenção</p>
+<p>Todas as análises foram feitas considerando apenas entregas com o peso de transporte entre 11000 e 13000 kilos.</p>
+</div>
+<div class="section" id="cidades">
+<h2>Cidades<a class="headerlink" href="#cidades" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quais-foram-as-cidades-com-maior-quantidade-de-entregas">
+<h3>Quais foram as cidades com maior quantidade de entregas?<a class="headerlink" href="#quais-foram-as-cidades-com-maior-quantidade-de-entregas" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A cidade de <strong>JUIZ DE FORA</strong> recebeu mais entregas em um ano do que as outras cidades.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_color_codes</span><span class="p">(</span><span class="s2">&quot;muted&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;DistAnnual&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Nome&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">counties_activity</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Quantidade&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Quantidade de distribuições por cidade em 1 ano&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_16_0.png" src="_images/EDA Nepomuceno_16_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>A maioria das cidades onde a Nepomuceno atua tiveram <strong>entre 1 e 125 entregas</strong> no ano em questão.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;svg&quot;</span> 
+<span class="n">svg_renderer</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="p">[</span><span class="s2">&quot;svg&quot;</span><span class="p">]</span>
+<span class="n">svg_renderer</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">870</span>
+<span class="n">svg_renderer</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">540</span>
+<span class="n">svg_renderer</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;kaleido&#39;</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;DistAnnual&#39;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth_mapbox</span><span class="p">(</span><span class="n">counties_activity</span><span class="p">[[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;DistAnnual&#39;</span><span class="p">]],</span> 
+                           <span class="n">geojson</span><span class="o">=</span><span class="n">counties_activity</span><span class="p">[[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span><span class="s1">&#39;DistAnnual&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Nome&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">__geo_interface__</span><span class="p">,</span> 
+                           <span class="n">locations</span><span class="o">=</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;DistAnnual&#39;</span><span class="p">,</span>
+                           <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&quot;haline&quot;</span><span class="p">,</span>
+                           <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&quot;carto-positron&quot;</span><span class="p">,</span>
+                           <span class="n">zoom</span><span class="o">=</span><span class="mf">5.3</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">18.644386</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">45.300141</span><span class="p">},</span>
+                           <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                           <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DistAnnual&#39;</span><span class="p">:</span><span class="s1">&#39;Distribuição Anuall&#39;</span><span class="p">}</span>
+                          <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;r&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_18_0.svg" src="_images/EDA Nepomuceno_18_0.svg" /></div>
+</div>
+</div>
+</div>
+<div class="section" id="centros-de-distribuicao">
+<h2>Centros de distribuição<a class="headerlink" href="#centros-de-distribuicao" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="qual-centro-de-distribuicao-possui-mais-atividade">
+<h3>Qual centro de distribuição possui mais atividade?<a class="headerlink" href="#qual-centro-de-distribuicao-possui-mais-atividade" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>O centro de distribuição de <strong>LAVRAS</strong> é responsável por mais de <strong>50%</strong> das entregas realizadas.</p></li>
+<li><p>O centro de distribuição de <strong>UBERLÂNDIA</strong> é o que possui <strong>menor % de entregas</strong>.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;mako&quot;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_color_codes</span><span class="p">(</span><span class="s2">&quot;muted&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;QtdEntregasPercent&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> 
+            <span class="n">data</span><span class="o">=</span><span class="n">distributions_centers</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;QtdEntregas&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> 
+            <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">e entregas&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Frequência relativa dos centros de distribuição&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_24_0.png" src="_images/EDA Nepomuceno_24_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distributions</span><span class="p">[</span><span class="s1">&#39;Mes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distributions</span><span class="o">.</span><span class="n">DataEmissaoCte</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Mes&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rota&#39;</span><span class="p">,</span>
+             <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span>
+             <span class="n">data</span><span class="o">=</span><span class="n">distributions</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Mes&#39;</span><span class="p">,</span> <span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Rota&#39;</span><span class="p">:</span> <span class="s1">&#39;nunique&#39;</span><span class="p">}),</span>
+             <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Qtd&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Mês&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Quantidade de entregas ao longo do ano&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_25_0.png" src="_images/EDA Nepomuceno_25_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="quantas-cidades-um-centro-de-distribuicao-atende">
+<h3>Quantas cidades um centro de distribuição atende?<a class="headerlink" href="#quantas-cidades-um-centro-de-distribuicao-atende" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>O centro de distribuição de <strong>BETIM</strong> antende em um <strong>raio maior</strong> do que os outros centros.</p></li>
+<li><p>O fator que faz com que o CD de <strong>LAVRAS</strong> tenha uma <strong>maior densidade de entregas</strong> do que <strong>BETIM</strong> é que LAVRAS atende cidades mais próximas.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distributions_geo</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distributions_geo</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">LineString</span><span class="p">(</span><span class="n">get_line</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">distributions_geo</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">distributions_geo</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">distributions_geo</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">distributions_geo</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">county_df</span><span class="o">.</span><span class="n">crs</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">distributions_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_28_0.png" src="_images/EDA Nepomuceno_28_0.png" />
+</div>
+</div>
+<p>O gráfico abaixo mostra mais precisamente como as cidades atendidas por determinado centro de distribuição estão distribuidas ao redor dele.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distributions_centers</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">distributions_centers</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">distributions_centers</span><span class="o">.</span><span class="n">Longitude</span><span class="p">,</span>
+                                                                    <span class="n">distributions_centers</span><span class="o">.</span><span class="n">Latitude</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">distributions_centers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_31_0.png" src="_images/EDA Nepomuceno_31_0.png" />
+</div>
+</div>
+<p>De fato, o cetro de distribuição de <strong>LAVRAS</strong> é o que atende a maior quantidade de cidades e <strong>é o mais movimentado</strong>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;CidadeEntrega&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">distributions_centers</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="n">by</span><span class="o">=</span><span class="s1">&#39;CidadeEntrega&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Quantidade de cidades atendidas por CD&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_34_0.png" src="_images/EDA Nepomuceno_34_0.png" />
+</div>
+</div>
+<p>Existem diversas formas de avaliar como as entregas foram feitas no período em questão.
+Porém, dada a <strong>limitação imposta</strong> pelos dados fornecidos optamos por partir de <strong>premissas</strong> ao iniciarmos a nossa solução.</p>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Estamos assumindo que todos os roteiros criados foram os melhores possíveis.</p>
+</div>
+<p>A solução abaixo será baseada na <strong>relação entre cidades</strong> com base nos roteiros realizados.</p>
+</div>
+</div>
+<div class="section" id="roteiros-importancia">
+<h2>Roteiros (Importância)<a class="headerlink" href="#roteiros-importancia" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="qual-a-frequencia-das-cidades-mais-encontradas-em-roteiros">
+<h3>Qual a frequência das cidades mais encontradas em roteiros?<a class="headerlink" href="#qual-a-frequencia-das-cidades-mais-encontradas-em-roteiros" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities_in_routes</span> <span class="o">=</span> <span class="n">correlation_data</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">cities_in_routes</span> <span class="o">=</span> <span class="n">cities_in_routes</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">cities_in_routes</span><span class="p">[</span><span class="s1">&#39;Percent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cities_in_routes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">cities_in_routes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Percent&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cities_in_routes</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">os roteiros&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frequencia relativa das 10 cidades com maior atividade&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_39_0.png" src="_images/EDA Nepomuceno_39_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="como-definir-importancia-em-relacao-a-cidades">
+<h3>Como definir ‘importância’ em relação a cidades?<a class="headerlink" href="#como-definir-importancia-em-relacao-a-cidades" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>O nosso conceito de ‘importância’ será baseado em uma estatística descritiva, a <strong>frequência relativa</strong>, em outras palavras: <strong>o quanto uma combinação de cidades ocorreu no período em questão</strong>.</p></li>
+<li><p>Para definirmos a importância precisaremos encontrar uma <strong>frequência mínima</strong> de tal forma que, para que uma combinação (de n cidades) possa ser considerada importante ela precisa ocorrer em pelo menos x porcento das entregas.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Note que não irá existir uma combinação importante de cidades com uma cidade ‘não importante’.</p>
+</div>
+<div class="figure align-center" id="exemplo-importancia">
+<img alt="_images/diagram.png" src="_images/diagram.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Exemplo hipotético do processo de filtro para até 2 cidades</span><a class="headerlink" href="#exemplo-importancia" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="qual-seria-a-melhor-frequencia-relativa-minima">
+<h3>Qual seria a melhor frequência relativa mínima?<a class="headerlink" href="#qual-seria-a-melhor-frequencia-relativa-minima" title="Permalink to this headline">¶</a></h3>
+<p>Iremos realizar testes com <strong>3</strong> valores possíveis como <strong>frequência mínima</strong> (1%, 0.5% e 0.1%).</p>
+<ul class="simple">
+<li><p>Para cada teste realizado a <strong>quantidade de cidades</strong> e a <strong>frequência</strong> nessas combinações serão observadas.</p></li>
+<li><p>A <strong>média amostral com um intervalo de confiança de 95%</strong> será usada para descrever esses dados.</p></li>
+</ul>
+<div class="seealso admonition">
+<p class="admonition-title">Veja também</p>
+<p><a class="reference external" href="https://pt.wikipedia.org/wiki/Intervalo_de_confian%C3%A7a">O que é intervalo de confiança</a></p>
+</div>
+<p>Analisando os resultados:</p>
+<ul class="simple">
+<li><p><strong>Para frequência mínima igual a 1%</strong>: A maioria das combinações obtidas possuem apenas 1 cidade com uma frequência em torno de 1.75% (uma evidência de que <strong>entregas com destino BELO HORIZONTE está afetando a média de ocorrência de outras cidades</strong>).</p></li>
+<li><p><strong>Para frequência mínima igual a 0.5%</strong>: A quantidade de combinações com mais de 1 cidade aumentou um pouco, e a média de frequência para as combinações abaixou para aproximadamente 1%.</p></li>
+<li><p><strong>Para frequência mínima igual a 0.1%</strong>: Para ambas as médias, a incerteza ao redor das médias estimadas diminuiu. A <strong>quantidade média de cidades por combinação é igual a 4.5</strong>, e a <strong>frequência está abaixo de 0.25%</strong>.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">axes</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Support&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Len&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">test_df</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ocean&quot;</span><span class="p">,</span> 
+            <span class="n">aspect</span><span class="o">=</span><span class="mf">.75</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade de cidades&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Qtd. média de cidades em diferentes parâmetros&#39;</span><span class="p">)</span>
+
+<span class="n">axes</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Support&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;RoutesSupport&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">test_df</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ocean&quot;</span><span class="p">,</span> 
+            <span class="n">aspect</span><span class="o">=</span><span class="mf">.75</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Frequência das combinações&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frequência média das combinações em diferentes parâmetros&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_47_0.png" src="_images/EDA Nepomuceno_47_0.png" />
+</div>
+</div>
+<p>Com base nas analises acima, a melhor <strong>frequência mínima</strong> para se considerar uma combinação ou cidade como ‘importante’ seria <strong>0.5%</strong></p>
+</div>
+<div class="section" id="com-que-frequencia-as-melhores-combinacoes-ocorrem">
+<h3>Com que frequência as melhores combinações ocorrem?<a class="headerlink" href="#com-que-frequencia-as-melhores-combinacoes-ocorrem" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequents_itemsets</span> <span class="o">=</span> <span class="n">fpgrowth</span><span class="p">(</span><span class="n">correlation_data</span><span class="p">,</span> <span class="n">min_support</span><span class="o">=</span><span class="n">MIN_SUPPORT</span><span class="p">,</span> <span class="n">use_colnames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">frequents_itemsets</span> <span class="o">=</span> <span class="n">frequents_itemsets</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">frequents_itemsets</span><span class="p">[</span><span class="s1">&#39;itemsets_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequents_itemsets</span><span class="o">.</span><span class="n">itemsets</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">frequents_itemsets</span><span class="p">[</span><span class="s1">&#39;Length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequents_itemsets</span><span class="o">.</span><span class="n">itemsets</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="n">figure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;itemsets_str&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">frequents_itemsets</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Frequência&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;10 melhores combinações com 1 cidade&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_50_0.png" src="_images/EDA Nepomuceno_50_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;itemsets_str&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">frequents_itemsets</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Length &gt; 1&#39;</span><span class="p">)[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Frequência&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;10 melhores combinações com 2 cidades&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_51_0.png" src="_images/EDA Nepomuceno_51_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Length&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">frequents_itemsets</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">frequents_itemsets</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma das quantidades de cidades por Roteiros&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Support&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma do suporte de Roteiros importantes&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_52_0.png" src="_images/EDA Nepomuceno_52_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="como-encontrar-relacoes-entre-cidades-se-baseando-nos-roteiros-criados">
+<h3>Como encontrar relações entre cidades se baseando nos roteiros criados?<a class="headerlink" href="#como-encontrar-relacoes-entre-cidades-se-baseando-nos-roteiros-criados" title="Permalink to this headline">¶</a></h3>
+<p>Com base nas combinações de cidades consideradas importantes iremos estabelecer uma <strong>correlação entre cidades</strong>, para essa correlação iremos mensurar a <strong>força dessa correlação</strong> e a <strong>chance dessa correlação ser apenas um acaso</strong>.</p>
+<ul class="simple">
+<li><p>Em outras palavras, cidades que possuem uma <strong>correlação alta</strong> são encontradas com <strong>mais frequência nos roteiros</strong>.</p></li>
+<li><p>Para <strong>mensurar a força de uma correlação</strong> (o quão verdadeira ela é) iremos usar uma métrica chamada <strong>Confiança</strong>.</p></li>
+<li><p>Uma <strong>Confiança</strong> forte não significa que essa correlação não possa ser um <strong>acaso</strong>, para identificarmos correlações que são frutos do <strong>acaso</strong> iremos usar uma métrica chamada <strong>Lift</strong>.</p></li>
+<li><p>A métrica <strong>Confiança</strong> é baseada em <strong>probabilidade condicionada</strong>.</p></li>
+</ul>
+<div class="seealso admonition">
+<p class="admonition-title">Veja também</p>
+<p><a class="reference external" href="https://pt.wikipedia.org/wiki/Probabilidade_condicionada">O que é probabilidade condicionada</a></p>
+</div>
+<p>Exemplo:</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/relation.png" src="_images/relation.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Exemplo hipotético do processo de filtro para até 2 cidades e um diagrama de venn da probabilidade condicionada</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Essa relação pode ser interpretada como:</p>
+<ul class="simple">
+<li><p><strong>80%</strong> das vezes em que <strong>BELO HORIZONTE e CONTAGEM</strong> apareceram em um roteiro, <strong>BETIM</strong> estava com eles.</p></li>
+<li><p>Ou, a probabilidade de <strong>BETIM</strong> aparecer em um roteiro, dado que <strong>BELO HORIZONTE e CONTAGEM</strong> estão nesse roteiro é igual a <strong>80%</strong>.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rules</span> <span class="o">=</span> <span class="n">association_rules</span><span class="p">(</span><span class="n">frequents_itemsets</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;confidence&#39;</span><span class="p">,</span> <span class="n">min_threshold</span><span class="o">=</span><span class="n">MIN_CONFIDENCE</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;confidence&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">rules</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;ocean&#39;</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lift&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">rules</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Confiança&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma da Confiança para os roteiros encontrados&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Lift&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma do Lift para os roteiros encontrados&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_57_0.png" src="_images/EDA Nepomuceno_57_0.png" />
+</div>
+</div>
+<p>Baseando-se nas correlaçoes encontradas entre cidades, iremos <strong>inferir</strong> se as cidades consideradas importantes <strong>estão sendo atendidas pelos melhores centros de distribuição</strong>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conclusion_geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">counties_activity</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Nome&#39;</span><span class="p">),</span> <span class="n">conclusion</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Nome&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">distributions_centers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">distributions_centers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cidades atendidas por seus CDS atualmente&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cidades atendidas por seus CDS com base nas correlações&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_60_0.png" src="_images/EDA Nepomuceno_60_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conclusion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">conclusion</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">distributions</span><span class="p">[[</span><span class="s1">&#39;CidadeEntrega&#39;</span><span class="p">,</span> <span class="s1">&#39;DepositoRcbto&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(),</span> 
+                      <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;CidadeEntrega&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;CidadeEntrega&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">conclusion</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">conclusion</span><span class="p">[</span><span class="s1">&#39;Change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">conclusion</span><span class="o">.</span><span class="n">Result</span> <span class="o">!=</span> <span class="n">conclusion</span><span class="o">.</span><span class="n">DepositoRcbto</span>
+
+<span class="n">important_cities</span> <span class="o">=</span> <span class="n">conclusion</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="n">keep_counties</span> <span class="o">=</span> <span class="n">conclusion</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">conclusion</span><span class="o">.</span><span class="n">Change</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="n">change_counties</span> <span class="o">=</span> <span class="n">conclusion</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">conclusion</span><span class="o">.</span><span class="n">Change</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+<span class="n">figure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">444</span><span class="p">,</span> <span class="n">important_cities</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Total de cidades&#39;</span><span class="p">,</span> <span class="s1">&#39;Cidades com importância&#39;</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total de cidades vs cidades consideradas importantes&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">keep_counties</span><span class="p">,</span> <span class="n">change_counties</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Manter CD&#39;</span><span class="p">,</span> <span class="s1">&#39;Alterar CD&#39;</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantidade&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cidades que deverão manter vs alterar o CD&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_61_0.png" src="_images/EDA Nepomuceno_61_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="roteiros">
+<h2>Roteiros<a class="headerlink" href="#roteiros" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="roteirizacao-de-veiculos">
+<img alt="_images/vrp.png" src="_images/vrp.png" />
+</div>
+<p>Com os roteiros relevantes filtrados, a próxima etapa será avaliá-los. Para fazer isso iremos ordenar as cidades de um roteiro de tal forma que a <strong>distância percorrida</strong> seja a menor possível, esse tipo de problema (ajuste de roteiros) é abordado em um campo chamado <strong>VRP</strong> (Problemas de roteirização de veículos).</p>
+<p><strong>VRP:</strong> É uma classe de problemas que envolve encontrar um formato ideal de rotas que serão trafegadas por uma frota de veículos para servir um conjunto de clientes.
+Dentre as características encontradas nesse conjunto de problemas podemos listar:</p>
+<ul class="simple">
+<li><p>Atribuir a rota mais curta a um veículo de tal forma que a quantidade de entregas (unidades) satisfaçam as suas <strong>limitações de capacidade</strong>;</p></li>
+<li><p>Encontrar um conjunto de rotas com <strong>menor custo</strong> de viagem total e maior satisfação do cliente (chegando ao local no <strong>tempo correto</strong>).</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Por conta das limitações impostas nos dados não conseguimos fazer uma abordagem completa levando em consideração todas as características de um VRP.</p>
+</div>
+<p>Iremos utilizar como comparação os <strong>roteiros já formados</strong> que satisfazem a condição de importância (definida acima) com uma <strong>versão otimizada (ordenada de tal forma que a distância total percorrida seja a menor)</strong> do mesmo roteiro (que passa pelas mesmas cidades de entrega).<br />
+Para a criação desses roteiros otimizados iremos fazer as seguintes premissas:</p>
+<ul class="simple">
+<li><p>O caminhão não pode passar duas vezes pela mesma cidade no percurso;</p></li>
+<li><p>O caminhão precisa realizar as entregas e voltar ao ponto de partida.</p></li>
+</ul>
+<p>Por meio desses dados iremos calcular a <strong>distância total percorrida</strong> e o <strong>ponto de partida ideal</strong> (considerando os 4 centros de distribuição disponíveis), a distância total percorrida será usada para comparar os roteiros atuais com os roteiros otimizados.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Iremos avaliar 1018 roteiros que satisfazem a condição de importância.</p>
+</div>
+<div class="section" id="como-os-roteiros-feitos-em-2020-se-diferem-em-termos-de-distancia-percorrida-dos-roteiros-otimizados">
+<h3>Como os roteiros feitos em 2020 se diferem em termos de distância percorrida dos roteiros otimizados?<a class="headerlink" href="#como-os-roteiros-feitos-em-2020-se-diferem-em-termos-de-distancia-percorrida-dos-roteiros-otimizados" title="Permalink to this headline">¶</a></h3>
+<p>Podemos ver que existe uma diferença entre ambas as distâncias, em relação a distância percorrida dos roteiros a sua média é puxada para a direita por uns poucos roteiros com distância total <strong>exageradamente alta</strong>. Iremos considerar isso mais abaixo quando escolhermos a mediana para representar o centro dessa variável.</p>
+<ul class="simple">
+<li><p>Houve uma <strong>redução na distância percorrida</strong> dos roteiros otimizados em comparação com os roteiros atuais (a sua média é de <strong>601 Km</strong> e as distâncias estão mais próximas da média com um desvio padrão de <strong>237 Km</strong>)</p></li>
+<li><p>Um roteiro deve ter entre <strong>236-1326 Km</strong>, já um roteiro otimizado deve ter entre <strong>364-838 Km</strong></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance_routes_stats</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaMelhorRoteiro</span><span class="o">.</span><span class="n">describe</span><span class="p">()[[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="n">distance_routes_stats</span> <span class="o">=</span> <span class="n">distance_routes_stats</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DistanciaMelhorRoteiro&#39;</span><span class="p">:</span> <span class="s1">&#39;Valor&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">distance_routes_stats</span><span class="p">[</span><span class="s1">&#39;Variavel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MelhorRoteiro&#39;</span>
+
+<span class="n">temp_</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="o">.</span><span class="n">describe</span><span class="p">()[[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="n">temp_</span> <span class="o">=</span> <span class="n">temp_</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DistanciaRoteiro&#39;</span><span class="p">:</span> <span class="s1">&#39;Valor&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">temp_</span><span class="p">[</span><span class="s1">&#39;Variavel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Roteiro&#39;</span>
+
+<span class="n">distance_routes_stats</span> <span class="o">=</span> <span class="n">distance_routes_stats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp_</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="s1">&#39;Estatistica&#39;</span><span class="p">})</span>
+<span class="n">distance_routes_stats</span><span class="p">[</span><span class="s1">&#39;Estatistica&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance_routes_stats</span><span class="o">.</span><span class="n">Estatistica</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;Média&#39;</span> <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="s1">&#39;mean&#39;</span> <span class="k">else</span> <span class="s1">&#39;Desvio Padrão&#39;</span><span class="p">)</span>
+<span class="n">distance_routes_stats</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance_routes_stats</span><span class="o">.</span><span class="n">Valor</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">distance_values</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="p">,</span> <span class="s1">&#39;Variavel&#39;</span><span class="p">:[</span><span class="s1">&#39;Roteiro&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">1018</span><span class="p">})</span>
+<span class="n">distance_values</span> <span class="o">=</span> <span class="n">distance_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaMelhorRoteiro</span><span class="p">,</span> <span class="s1">&#39;Variavel&#39;</span><span class="p">:[</span><span class="s1">&#39;MelhorRoteiro&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">1018</span><span class="p">}))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distância percorrida - Roteiro vs Melhor Roteiro&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_color_codes</span><span class="p">(</span><span class="s2">&quot;pastel&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Variavel&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">distance_values</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span>
+                 <span class="n">medianprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">),</span> <span class="n">boxprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Distância (Km*1000)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">get_offset_text</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Estatistica&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Variavel&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">distance_routes_stats</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Variavel&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Distância (Km)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_77_0.png" src="_images/EDA Nepomuceno_77_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="qual-seria-a-diferenca-percentual-na-quilometragem-total-em-2020-se-os-roteiros-fossem-trocados-pelos-roteiros-otimizados">
+<h3>Qual seria a diferença percentual na quilometragem total em 2020 se os roteiros fossem trocados pelos roteiros otimizados?<a class="headerlink" href="#qual-seria-a-diferenca-percentual-na-quilometragem-total-em-2020-se-os-roteiros-fossem-trocados-pelos-roteiros-otimizados" title="Permalink to this headline">¶</a></h3>
+<p>Se substituíssemos os roteiros atuais pelos roteiros otimizados haveria uma <strong>redução</strong> na quilometragem total em 2020 de <strong>22,9%</strong>.</p>
+<ul class="simple">
+<li><p>Com os roteiros atuais foram percorridos aproximadamente <strong>795,42 mil Km</strong>, já com os roteiros otimizados esse valor cairia para <strong>612,72 mil Km</strong></p></li>
+<li><p>Em relação ao centros de distribuição <strong>Betim</strong>, <strong>Lavras</strong> e <strong>Uberlândia</strong> essas diferenças percentuais seriam respectivamente <strong>9,2%</strong>, <strong>28,1%</strong> e <strong>6,7%</strong></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_mileage</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">total_mileage_new_routes</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaMelhorRoteiro</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">total_mileage_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">total_mileage</span><span class="o">-</span><span class="n">total_mileage_new_routes</span><span class="p">)</span>
+<span class="n">total_mileage_percent_change</span> <span class="o">=</span> <span class="n">total_mileage_diff</span><span class="o">/</span><span class="n">total_mileage</span>
+
+
+<span class="n">mileage_by_cds</span> <span class="o">=</span> <span class="n">important_routes</span><span class="p">[[</span><span class="s1">&#39;Origem&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaRoteiro&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaMelhorRoteiro&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origem&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">mileage_by_cds</span> <span class="o">=</span> <span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="mf">1e7</span><span class="p">)</span>
+<span class="n">mileage_by_cds</span> <span class="o">=</span> <span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">DiffPercentual</span><span class="o">=</span><span class="p">(</span>
+    <span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="o">-</span><span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">DistanciaMelhorRoteiro</span><span class="p">)</span><span class="o">/</span><span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="p">)</span>
+<span class="n">mileage_by_cds</span> <span class="o">=</span> <span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DistanciaRoteiro&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaMelhorRoteiro&#39;</span><span class="p">])</span>                             
+<span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Diff Percentual&#39;</span><span class="p">]</span>
+
+<span class="n">mileage_by_cds</span> <span class="o">=</span> <span class="n">mileage_by_cds</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Roteiros Nepomuceno&#39;</span><span class="p">,</span> <span class="s1">&#39;Roteiros Otimizados&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">total_mileage</span><span class="o">/</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">total_mileage_new_routes</span><span class="o">/</span><span class="mf">1e6</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Quilometragem total em 2020&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Milhões de Km&#39;</span><span class="p">)</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Diff Percentual&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Origem&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mileage_by_cds</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Diferença percentual da quilometragem total por centro de distribuição&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_80_0.png" src="_images/EDA Nepomuceno_80_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="qual-seria-a-diferenca-percentual-na-distancia-mediana-por-roteiro-se-eles-fossem-trocados-pelos-roteiros-otimizados">
+<h3>Qual seria a diferença percentual na distância mediana por roteiro se eles fossem trocados pelos roteiros otimizados?<a class="headerlink" href="#qual-seria-a-diferenca-percentual-na-distancia-mediana-por-roteiro-se-eles-fossem-trocados-pelos-roteiros-otimizados" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>distância mediana por roteiro</strong> também seria afetada se trocássemos pelos roteiros otimizados, com uma redução de <strong>8,7%</strong>.</p>
+<ul class="simple">
+<li><p>Para o centro de distribuição de Uberlândia haveria um aumento de <strong>5%</strong>, isso se deve ao fato de que não foi possível encontrar roteiros melhores para a maioria dos roteiros com essa origem</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">median_routes_distance</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">mean_routes_distance_new_routes</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">DistanciaMelhorRoteiro</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">median_routes_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">median_routes_distance</span><span class="o">-</span><span class="n">mean_routes_distance_new_routes</span><span class="p">)</span>
+<span class="n">median_distance_percent_change</span> <span class="o">=</span> <span class="n">median_routes_diff</span><span class="o">/</span><span class="n">median_routes_distance</span>
+
+<span class="n">median_distance_by_cds</span> <span class="o">=</span> <span class="n">important_routes</span><span class="p">[[</span><span class="s1">&#39;Origem&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaRoteiro&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaMelhorRoteiro&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="s1">&#39;Origem&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;DistanciaRoteiro&#39;</span><span class="p">:</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaMelhorRoteiro&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">})</span>
+<span class="n">median_distance_by_cds</span> <span class="o">=</span> <span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="mf">1e7</span><span class="p">)</span>
+<span class="n">median_distance_by_cds</span> <span class="o">=</span> <span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">DiffPercentual</span><span class="o">=</span><span class="p">(</span>
+    <span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="o">-</span><span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">DistanciaMelhorRoteiro</span><span class="p">)</span><span class="o">/</span><span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">DistanciaRoteiro</span><span class="p">)</span>
+<span class="n">median_distance_by_cds</span> <span class="o">=</span> <span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DistanciaRoteiro&#39;</span><span class="p">,</span> <span class="s1">&#39;DistanciaMelhorRoteiro&#39;</span><span class="p">])</span>                             
+<span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Diff Percentual&#39;</span><span class="p">]</span>
+
+<span class="n">median_distance_by_cds</span> <span class="o">=</span> <span class="n">median_distance_by_cds</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Roteiros Nepomuceno&#39;</span><span class="p">,</span> <span class="s1">&#39;Roteiros Otimizados&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">median_routes_distance</span><span class="o">/</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">mean_routes_distance_new_routes</span><span class="o">/</span><span class="mf">1e3</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distância mediana por roteiro feito em 2020&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Km&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Diff Percentual&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Origem&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">median_distance_by_cds</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Diferença percentual da distância mediana por roteiro&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_83_0.png" src="_images/EDA Nepomuceno_83_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dos-roteiros-realizados-quantos-poderiam-ter-uma-origem-diferente">
+<h3>Dos roteiros realizados quantos poderiam ter uma origem diferente?<a class="headerlink" href="#dos-roteiros-realizados-quantos-poderiam-ter-uma-origem-diferente" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Foram encontrados <strong>261</strong> roteiros onde uma origem diferente produziria uma redução na distância total do percurso. A maioria deles partem de Lavras e um apenas de Uberlândia e Betim.</p></li>
+<li><p>Para <strong>216</strong> roteiros que partem de <strong>Lavras</strong> foi recomendado <strong>Betim</strong> e para <strong>43</strong> roteiros foi recomendado <strong>Diadema</strong></p></li>
+<li><p>Para um único roteiro que parte de <strong>Uberlândia</strong> foi recomendado <strong>Betim</strong></p></li>
+<li><p>E para um único roteiro que parte de <strong>Betim</strong> foi recomendado <strong>Lavras</strong></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">origin_info</span> <span class="o">=</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">Origem</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Origem&#39;</span><span class="p">:</span><span class="s1">&#39;Total&#39;</span><span class="p">})</span>
+<span class="n">origin_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">origin_info</span><span class="p">,</span> <span class="n">important_routes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">important_routes</span><span class="o">.</span><span class="n">MelhorOrigem</span><span class="o">!=</span><span class="n">important_routes</span><span class="o">.</span><span class="n">Origem</span><span class="p">]</span><span class="o">.</span><span class="n">Origem</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="n">origin_info</span> <span class="o">=</span> <span class="n">origin_info</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Origem&#39;</span><span class="p">:</span><span class="s1">&#39;Change&#39;</span><span class="p">})</span>
+<span class="n">origin_info</span> <span class="o">=</span> <span class="n">origin_info</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">origin_info</span> <span class="o">=</span> <span class="n">origin_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;DIADEMA&#39;</span><span class="p">],</span> <span class="s1">&#39;Total&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">],</span> <span class="s1">&#39;Change&#39;</span><span class="p">:[</span><span class="mf">0.0</span><span class="p">]}))</span>
+<span class="n">origin_info</span> <span class="o">=</span> <span class="n">origin_info</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Change&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="n">bestorigim_info</span> <span class="o">=</span> <span class="n">important_routes</span><span class="p">[</span><span class="n">important_routes</span><span class="o">.</span><span class="n">Origem</span><span class="o">!=</span><span class="n">important_routes</span><span class="o">.</span><span class="n">MelhorOrigem</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origem&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">MelhorOrigem</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_color_codes</span><span class="p">(</span><span class="s2">&quot;pastel&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">origin_info</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_color_codes</span><span class="p">(</span><span class="s2">&quot;muted&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Change&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">origin_info</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Poderiam Mudar&#39;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()[</span><span class="mi">4</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Quantidade&quot;</span><span class="p">,</span>
+       <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Roteiros que poderiam partir de outro centro de distribuição&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">containers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">containers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;MelhorOrigem&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Origem&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;level_1&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bestorigim_info</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Quantidade&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Origens recomendadas&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_86_0.png" src="_images/EDA Nepomuceno_86_0.png" />
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Atenção</p>
+<p>Foram encontrados 9 roteiros onde uma sugestão de origem diferente foi feita mas a distância total do percurso é maior no roteiro otimizado, eles serão ignorados mas não serão removidos.
+A Rota desses roteiros são: 44351, 46335, 50770, 52376, 54451, 55439, 60696, 61417, 63307</p>
+</div>
+</div>
+<div class="section" id="como-as-cidades-importantes-ficam-distribuidas-em-relacao-ao-centro-de-distribuicao-se-trocarmos-a-origem">
+<h3>Como as cidades importantes ficam distribuidas em relação ao Centro de distribuição se trocarmos a origem?<a class="headerlink" href="#como-as-cidades-importantes-ficam-distribuidas-em-relacao-ao-centro-de-distribuicao-se-trocarmos-a-origem" title="Permalink to this headline">¶</a></h3>
+<p>Agora podemos redistribuir as cidades com base no centro de distribuição recomendado, usaremos a moda do centro de distribuição recomendado para cada cidade nos roteiros analisados.<br />
+Analisando os mapas conseguimos ver que:</p>
+<ul class="simple">
+<li><p>Algumas cidades ao sul de Minas Gerais deveriam ser atendidas pelo Centro de Distribuição de Diadema</p></li>
+<li><p>Algumas cidades na região metropolitana de Belo Horizonte deveriam ser atendidas pelo centro de distribuição de Betim</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conclusion_geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">counties_activity</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Nome&#39;</span><span class="p">),</span> <span class="n">conclusion_by_routes</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Nome&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;CDAtual&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;CDAtual&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;CDAtual&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">distributions_centers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                    <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+<span class="n">conclusion_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                    <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+
+<span class="n">distributions_centers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_91_0.png" src="_images/EDA Nepomuceno_91_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="conclusao">
+<h1>Conclusão<a class="headerlink" href="#conclusao" title="Permalink to this headline">¶</a></h1>
+<p>Foram feitas análises nos dados na tentativa de avaliar os roteiros criados pela Nepomuceno em 2020 (Estão os roteiros estruturados bons? O que signfica um roteiro ser bom? As cidades atendidas atualmente estão sendo atendidas pelo centro de distribuição ideal? E como distribuir as cidades entre os centros de distruição considerando os roteiros que foram montados anteriormente?).</p>
+<p>Com essa análise, conseguimos:</p>
+<ul class="simple">
+<li><p>Entender como as entregas estão distribuidas nas cidades atendidas;</p></li>
+<li><p>Definir um conceito de ‘importância’, para que conseguissemos filtrar os roteiros/cidades que possuem <strong>maior relevância</strong>;</p></li>
+<li><p>Encontrar <strong>correlações entre cidades</strong> e mensurar a força dessa correlação com base nos roteiros;</p></li>
+<li><p>Encontrar roteiros que possam ser otimizados levando em consideração a distância percorrida;</p></li>
+<li><p>Recomendar qual o <strong>melhor centro de distribuição</strong> para atender uma cidade com base nas correlações e melhores rotas.</p></li>
+</ul>
+<p>Após a modificação nos centros de distribuição para cada cidade conseguimos observar geograficamente uma delimitação para cada um. Algumas cidades (ex: Argirita e Conceição do Pará) estão ultrapassando essa delimitação, então serão necessários ajustes manuais.</p>
+<p>O gráfico abaixo representa como ficaria a distribuição das cidades em relação aos centros de distribuição considerando dois fatores diferentes:</p>
+<ul class="simple">
+<li><p>Uma correlação implícita, duas cidades são ditas correlacionadas se aparecem juntas constantemente ao se criar um roteiro;</p></li>
+<li><p>Distância por roteiro otimizado, se uma recomendação diferente foi feita, um roteiro melhor (com menor distância total percorrida) foi encontrado.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">county_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+<span class="n">distributions_geo_</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;MelhorCD&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span><span class="s1">&#39;upper left&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">map_palette</span><span class="p">)</span>
+<span class="n">distributions_centers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/EDA Nepomuceno_98_0.png" src="_images/EDA Nepomuceno_98_0.png" />
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Foram encontrados alguns registros de rotas que <strong>ocorreram no mesmo dia</strong> que possuem <strong>dois centros de distribuição</strong>, exemplos: 47753, 58482, 59080, 46696, 57704</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Matheus Buarque, João Victor<br/>
+    
+        &copy; Copyright Lumini IT 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
